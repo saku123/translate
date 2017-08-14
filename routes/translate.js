@@ -5,7 +5,7 @@ var translate = require('google-translate-api');
 /* GET home page. */
 router.post('/translate', function(req, res, next) {
   translate(req.body.text, {to: 'zh-CN'}).then(resObj => {
-      res.json(resObj.text);
+      res.send(resObj.text);
   }).catch(err => {
       console.error(err);
   });
